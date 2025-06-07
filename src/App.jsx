@@ -125,6 +125,7 @@ export default function App() {
         <audio ref={audioRef} src={currentSong} loop />
 
         <Chat />
+        
       </div>
     </>
   );

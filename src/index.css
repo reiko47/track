@@ -1,14 +1,13 @@
-
 .ripped {
-   width: 140%;
+  width: 140%;
   position: relative;
   top: -80px;
   left: 55%;
   transform: translateX(-50%);
   pointer-events: none;
-  z-index: 2; 
+  z-index: 2;
   pointer-events: none;
-  
+
   text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.5);
 }
 
@@ -17,7 +16,7 @@
   display: inline-block;
   padding: 20px;
   position: relative;
-  
+
   text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.5);
 }
 
@@ -37,10 +36,12 @@
     transform: translateY(100%) skewY(10deg);
     opacity: 0;
   }
+
   60% {
     transform: translateY(-10%) skewY(-2deg);
     opacity: 1;
   }
+
   100% {
     transform: translateY(0) skewY(0);
     opacity: 1;
@@ -70,8 +71,15 @@
 }
 
 @keyframes popIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .hearts-bg {
@@ -98,10 +106,12 @@
     transform: translateY(0) scale(1);
     opacity: 0.2;
   }
+
   50% {
     transform: translateY(-200px) scale(1.3);
     opacity: 0.5;
   }
+
   100% {
     transform: translateY(-500px) scale(1);
     opacity: 0;
@@ -129,9 +139,20 @@
 }
 
 @keyframes pulseHeart {
-  0% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.3); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.7; }
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
 }
 
 
@@ -162,7 +183,7 @@ h1 {
   text-align: center;
   color: #ff4b75;
   font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -226,19 +247,39 @@ button:hover {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
   .chat-container {
-    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    height: 400vh;
+    padding: 10px;
+  }
+
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 70vh;
+    padding-right: 10px;
   }
 
   .chat-bubble {
-    font-size: 14px;
-    padding: 8px 12px;
+    white-space: pre-wrap;
+    /* Allows line breaks */
+    word-break: break-word;
+    
   }
+
 
   .header-title {
     font-size: 20px;
@@ -261,6 +302,7 @@ button:hover {
     transform: scale(0.8);
   }
 }
+
 .krish-bear {
   position: fixed;
   bottom: 20px;
@@ -278,7 +320,7 @@ button:hover {
   }
 }
 
-.chatbox{
+.chatbox {
   display: flex;
   flex-direction: column;
   height: 100vh;
