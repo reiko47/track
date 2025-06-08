@@ -3,9 +3,20 @@ import { sendMessageToGroq } from './api';
 import { useRef, useEffect } from "react";
 
 
+async function logChatMessage(message, user = 'Guest') {
+  await fetch('/.netlify/functions/logChat', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ message, user }),
+  });
+}
+
 export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [showDownload, setShowDownload] = useState(false);
+
 
 
   const [input, setInput] = useState('');
@@ -14,6 +25,8 @@ export default function Chat() {
 
   const sendSoundRef = useRef(null);
   const receiveSoundRef = useRef(null);
+  const messagesEndRef = useRef(null);
+
 
 
   const handleSend = async () => {
@@ -23,6 +36,17 @@ export default function Chat() {
       role: 'user',
       content: input.trim(),
     };
+
+    // Log chat message to Netlify Function
+    try {
+      await fetch('/.netlify/functions/logChat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: input.trim(), user: 'User' })
+      });
+    } catch (err) {
+      console.error("Failed to log chat:", err);
+    }
 
     const updatedMessages = [...messages, userMessage];
     setMessages(updatedMessages);
@@ -41,23 +65,32 @@ export default function Chat() {
         setMessages(prev => [...prev, {
           role: 'assistant',
           content: reply
-
         }]);
+        // Log assistant reply
+        try {
+          await fetch('/.netlify/functions/logChat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: reply, user: 'AI' })
+          });
+        } catch (err) {
+          console.error("Failed to log AI reply:", err);
+        }
+
 
         if (reply.includes("He left his last message for you... Wanna see?")) {
           setShowDownload(true);
         }
-
       }
 
     } catch (error) {
       console.error("API failure:", error);
     }
 
-
     setLoading(false);
     receiveSoundRef.current?.play();
   };
+
 
 
   const handleDownloadText = () => {
@@ -179,7 +212,7 @@ export default function Chat() {
            downs too.
            Things to remember- You should have know me by now, i won't do anything that will cause you problems, not forcing no nothing.
         
-        do you wanna continue living you life? 
+        OR do you just wanna continue living your life like you are doing rn? 
         -  No space for an idiot like me in your life..
 
 
@@ -201,7 +234,7 @@ export default function Chat() {
 
 
 
-  const messagesEndRef = useRef(null);
+
 
   useEffect(() => {
     if (!messages.length) return;
@@ -262,6 +295,7 @@ export default function Chat() {
             </div>
           ))}
         <div ref={messagesEndRef} />
+
       </div>
 
       <div className="input-area">

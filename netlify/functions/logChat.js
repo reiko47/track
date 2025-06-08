@@ -1,14 +1,22 @@
-// netlify/functions/logChat.js
+export async function handler(event, context) {
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: 'Method not allowed' }),
+    };
+  }
 
-exports.handler = async (event) => {
-  const body = JSON.parse(event.body);
-  const { userMessage, aiResponse } = body;
-
-  console.log("User:", userMessage);
-  console.log("AI:", aiResponse);
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: "Chat logged successfully." }),
-  };
-};
+  try {
+    const { message, user } = JSON.parse(event.body);
+    console.log(`Chat from ${user || 'anonymous'}: ${message}`);
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ status: 'Logged successfully' }),
+    };
+  } catch (err) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: 'Invalid request' }),
+    };
+  }
+}
