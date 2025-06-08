@@ -155,15 +155,18 @@ export default function Chat() {
       Rn now i am just realising that what i am doing might work for you so that you can get an escape form all this
       but for me
       i will just .....
+      i will just go back to that hell, back to where i was, ik myselfthere will be no good for me once it's over
 
       Himanshi ji... 
-      idk what wold happen to me once I leave, I am afraid so much afraid..  
+      idk what would happen to me once I leave, I am afraid so much afraid..  
       will I be go to that hell again
       Rn everything is good.. we are so much happy... helping each other, loving each other.. 
       This is the life i want 
       this is my first priority
       kya hum humesha aise nhi reh skte....
-      tumne notice kiya hoga i didn't said sry even for once 
+
+
+      Tumne notice kiya hoga i didn't said sry even for once 
       beacause i am not... 
       It true waht i am doing is wrong..
       But mera koi bad intention nhi hai tumhaare saath mai toh bass tumhe dil kholkr pyaar krna chahta hu himanshi ji
@@ -177,7 +180,9 @@ export default function Chat() {
       
       Himanshi ji 
       I want you ki tum mujhpr gussa kro iske liye.... 
-      mujhse gussa raho boht dino tk
+      mujhse gussa raho boht dino tk.. par bas saath raho inn 15 din ki tarah.. ik we have made peacefull moments
+      but i want to make my life itself peacefull, and it will be only possible if u are there.
+      Even if u say find peace in other thing but It's my first priority in life i can't change that. For me Love is peace..
 
       Rn everything is feeling like a dream, I just want to live this dream forever for my whole life.. 
       lol you remember i used to say ig you can save me...
@@ -202,22 +207,31 @@ export default function Chat() {
       i was so fed up and mentally sick that i just couldn't do it... it wass soo
       I couldn't..
 
-      idk what would be my situation after leaving but
+      Humari gaadi humesha ek hi chij par aake ruk jaati hai...  ki what if there is not future...
+      wth future ka itna sochkr kya krenge agar present hi acha na chle toh.... You have all bad exmaples from your family, friends etc.. but there are goood too..
+      thoda filmy hai you remember in avenger infinity war there was 14,000,605 possibilities they lose but what we saw is one possibilty in which they won..
+      Even there is one possibilty for us. I wanna try.. All you have to do is just believe in me.. Ik i am being filmy but ig it's what we should do.
+      
+      
 
-      ik myself, I will be needing you so just don't get too late
 
-      It's your choice from here on
+
+      It's your choice from here on, YOU DECIDE:
+
         do you want to give this idiot a chance? 
         -  So that you can save an idiot's life and our whole life can be like these 15 days with very high ups but sometime a lil bit                          
            downs too.
-           Things to remember- You should have know me by now, i won't do anything that will cause you problems, not forcing no nothing.
+           You should have know me by now, i won't do anything that will cause you problems, not forcing no nothing. 
+           ik myself, I will be needing you so just don't get too late ok:)
         
-        OR do you just wanna continue living your life like you are doing rn? 
+        do you wanna continue living you life? 
         -  No space for an idiot like me in your life..
 
 
-      Idk what you will be think after reading this last message, but ek baat toh humesha sch rahegi 
-      I LOVE YOU 3000:)"
+      Idk what you will do after reading this last message, but ek baat toh humesha sch rahegi 
+      I LOVE YOU 3000:) my dumbo"
+
+
   `.trim();
 
     const blob = new Blob([content], { type: 'text/plain' });
